@@ -90,9 +90,8 @@
        <br> 4.Create function with 2 string params. It must check if letters in the first correspond to the number of matches in second and return %.
     </div>
     <br>
+    
     <script>
-       
-
         function twixString(strFirst,strSecond){
             strFirst = prompt('Введите 1 строку для сравнения');
             strSecond = prompt('Введите 2 строку для сравнения');
@@ -107,10 +106,11 @@
             }
           }
           let percent;
-            if (strFirst.length >= strSecond.length)
+            if (strFirst.length >= strSecond.length){
                 percent = (count/strFirst.length)* 100 + '%';
+            }
             else
-                percent = (count/strSecond.length)* 100 + '%';
+                {percent = (count/strSecond.length)* 100 + '%';};
           document.write('<br>' + "Процент совпадений:  " + percent);
         }
         twixString();
