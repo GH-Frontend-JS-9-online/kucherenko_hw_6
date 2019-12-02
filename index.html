@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Homework 6</title>
+</head>
+<body>
+    <style>
+        .main {
+            font-size: 20px;
+            color: gray;
+        }
+    </style>
+    <div class="main">
+        1.Find in array: sum, min and max, replace min and max - create custom functions 
+    </div>
+    <br>
+	<script>
+	   "use strict"
+       
+        let arr =[12,3435,32,105,902, 728,];
+        document.write('Заданный массив:  ' + arr + '<br>');
+        
+
+        function summ(){
+            let result = arr.reduce(function(sum, current) {return sum + current;
+            });
+            document.write('Сумма всех элементов массива:  ' + result + '<br>' );};
+
+        summ();
+
+        function min(){
+            let min=Math.min(...arr);
+            document.write('Минимум в масиве:  ' + 'min = ' + min + '<br>');
+        };
+        min();
+
+        function max(){
+            let max=Math.max(...arr);
+            document.write('Максимум в масиве:  ' + 'max = ' + max + '<br>');
+        };
+        max();
+
+        function replace(){
+            min=Math.max(...arr),
+            max=Math.min(...arr);
+
+            document.write('Измененный минимум:  ' + 'min = ' + min + '<br>');
+            document.write('Измененный максимум:  ' + 'max = ' + max + '<br>');
+        };
+        replace();
+    </script>
+
+    <div class="main">
+       <br> 2.Create function which will return function with callback in arguments
+    </div>
+    <br>
+    <script>
+        create(summ);
+        function create(callback){ 
+            document.write("Это функция summ из первого задания:  ");
+            callback();   
+        };
+	</script>
+    <div class="main">
+       <br> 3.Create a function that will replace all number dividing three with ‘foo’, dividing seven with ‘bar’ and dividing three and seven with ‘foobar’. Function with n params.
+    </div>
+    <br>
+    <script>
+        function foobar(){
+            for (let i=0; i< arr.length; i++){
+                if((arr[i]% 3==0) && (arr[i]% 7==0)){
+                    arr[i]='foobar';
+                }
+                else
+                    if((arr[i]%3)==0){
+                    arr[i]='foo';
+                }
+                else
+                    if((arr[i]%7)==0){
+                    arr[i]='bar';
+                }
+            }
+            document.write(arr)
+        ;}
+        foobar();
+    </script>
+
+     <div class="main">
+       <br> 4.Create function with 2 string params. It must check if letters in the first correspond to the number of matches in second and return %.
+    </div>
+    <br>
+    <script>
+       
+
+        function twixString(strFirst,strSecond){
+            strFirst = prompt('Введите 1 строку для сравнения');
+            strSecond = prompt('Введите 2 строку для сравнения');
+            document.write(strFirst + '<br>' + strSecond);
+            let count = 0;
+          for (let i = 0; i< strFirst.length; i++){
+            for (let j = 0; j<strSecond.length; j++){
+              if (strFirst[i] === strSecond[j]) {
+                console.log(strFirst[i] + ' - ' + strSecond[j]);
+                count++;
+              }
+            }
+          }
+          let percent;
+            if (strFirst.length >= strSecond.length)
+                percent = (count/strFirst.length)* 100 + '%';
+            else
+                percent = (count/strSecond.length)* 100 + '%';
+          document.write('<br>' + "Процент совпадений:  " + percent);
+        }
+        twixString();
+    </script>
+</body>
+</html>
