@@ -20,13 +20,14 @@
        
         let arr =[12,3435,32,105,902, 728,];
         document.write('Заданный массив:  ' + arr + '<br>');
+        alert('Задаем массив:  ' + arr);
         
 
         function summ(){
             let result = arr.reduce(function(sum, current) {return sum + current;
             });
             document.write('Сумма всех элементов массива:  ' + result + '<br>' );};
-
+            
         summ();
 
         function min(){
@@ -90,7 +91,7 @@
        <br> 4.Create function with 2 string params. It must check if letters in the first correspond to the number of matches in second and return %.
     </div>
     <br>
-    
+
     <script>
         function twixString(strFirst,strSecond){
             strFirst = prompt('Введите 1 строку для сравнения');
@@ -106,7 +107,7 @@
             }
           }
           let percent;
-            if (strFirst.length >= strSecond.length){
+            if (strFirst.length <= strSecond.length){
                 percent = (count/strFirst.length)* 100 + '%';
             }
             else
