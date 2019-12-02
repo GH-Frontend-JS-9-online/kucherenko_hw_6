@@ -27,7 +27,7 @@
             let result = arr.reduce(function(sum, current) {return sum + current;
             });
             document.write('Сумма всех элементов массива:  ' + result + '<br>' );};
-            
+
         summ();
 
         function min(){
@@ -98,14 +98,12 @@
             strSecond = prompt('Введите 2 строку для сравнения');
             document.write(strFirst + '<br>' + strSecond);
             let count = 0;
-          for (let i = 0; i< strFirst.length; i++){
-            for (let j = 0; j<strSecond.length; j++){
-              if (strFirst[i] === strSecond[j]) {
-                console.log(strFirst[i] + ' - ' + strSecond[j]);
+          for (let i = 0;   i<strFirst.length; i++){
+            if (strFirst[i] === strSecond[i]) {
+                console.log(strFirst[i] + ' - ' + strSecond[i]);
                 count++;
-              }
+              } 
             }
-          }
           let percent;
             if (strFirst.length <= strSecond.length){
                 percent = (count/strFirst.length)* 100 + '%';
